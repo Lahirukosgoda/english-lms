@@ -32,7 +32,7 @@ function LoginPage() {
           label="Email"
           icon="✉"
           type="email"
-          placeholder=" enter your email"
+          placeholder=" please enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
