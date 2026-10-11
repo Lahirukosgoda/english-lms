@@ -14,7 +14,7 @@ function Header() {
 
       <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
         <a href="#" className="hover:text-blue-600">Home</a>
-        <a href="#" className="hover:text-blue-600">Courses</a>
+        <Link to="/courses" className="hover:text-blue-600">Courses</Link>
         <a href="#" className="hover:text-blue-600">About</a>
         <a href="#" className="hover:text-blue-600">Contact</a>
       </div>

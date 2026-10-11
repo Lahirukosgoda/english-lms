@@ -19,6 +19,8 @@ function Hero() {
             <button className="border border-blue-500 text-blue-600 font-medium px-6 py-2.5 rounded-full hover:bg-blue-100 transition-colors">
               View Courses
             </button>
+           
+
           </div>
         </div>
 
