@@ -13,10 +13,10 @@ function Header() {
       </div>
 
       <div className="hidden md:flex items-center gap-8 text-sm text-gray-600">
-        <a href="#" className="hover:text-blue-600">Home</a>
+        <Link to="/" className="hover:text-blue-600">Home</Link>
         <Link to="/courses" className="hover:text-blue-600">Courses</Link>
-        <a href="#" className="hover:text-blue-600">About</a>
-        <a href="#" className="hover:text-blue-600">Contact</a>
+        <Link to="/#about" className="hover:text-blue-600">About</Link>
+        <Link to="/#contact" className="hover:text-blue-600">Contact</Link>
       </div>
 
       <Link

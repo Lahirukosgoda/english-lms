@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ExploreGrades() {
   const grades = Array.from({ length: 11 }, (_, i) => `Grade ${i + 1}`);
-  const [selected, setSelected] = useState("Grade 1");
 
   return (
     <section className="px-10 py-16 text-center">
@@ -14,17 +13,13 @@ function ExploreGrades() {
 
       <div className="flex flex-wrap justify-center gap-3 mt-8 max-w-4xl mx-auto">
         {grades.map((grade) => (
-          <button
+          <Link
             key={grade}
-            onClick={() => setSelected(grade)}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-              selected === grade
-                ? "bg-blue-600 text-white"
-                : "bg-blue-50 text-gray-600 hover:bg-blue-100"
-            }`}
+            to={`/courses?grade=${grade.replace("Grade ", "")}`}
+            className="px-5 py-2 rounded-full text-sm font-medium transition-colors bg-blue-50 text-gray-600 hover:bg-blue-100"
           >
             {grade}
-          </button>
+          </Link>
         ))}
       </div>
     </section>

@@ -6,7 +6,7 @@ function WhyLearnWithUs() {
   ];
 
   return (
-    <section className="bg-blue-50 px-10 py-16 text-center">
+    <section id="about" className="bg-blue-50 px-10 py-16 text-center">
       <h2 className="text-3xl font-extrabold text-gray-900">Why Learn With Us?</h2>
       <p className="text-gray-500 mt-2 max-w-xl mx-auto">
         Everything your child needs to achieve native-level fluency through

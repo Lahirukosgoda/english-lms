@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Header from "../landing/Header.jsx";
 import Reveal from "./Reveal.jsx";
 import SearchBar from "./SearchBar.jsx";
@@ -14,10 +15,14 @@ const SORTS = ["Popular", "A–Z", "Progress"];
 
 function CoursesPage() {
   const [query, setQuery] = useState("");
-  const [grade, setGrade] = useState(1);
+  const [searchParams] = useSearchParams();
+  const gradeParam = Number(searchParams.get("grade"));
+  const initialGrade = gradeParam >= 1 && gradeParam <= 11 ? gradeParam : 1;
+  const [grade, setGrade] = useState(initialGrade);
   const [sortIndex, setSortIndex] = useState(0);
   const [page, setPage] = useState(1);
   const listRef = useRef(null);
+  const gradeFilterRef = useRef(null);
 
   const sort = SORTS[sortIndex];
 
@@ -84,13 +89,15 @@ function CoursesPage() {
             onSearch={handleSearch}
             sortLabel={sort}
             onSortClick={handleSort}
-            onFilterClick={() => console.log("Filters clicked")}
+            onFilterClick={() => gradeFilterRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })}
           />
         </Reveal>
 
-        <Reveal delay={250} className="mt-6">
-          <GradeFilter selected={grade} onSelect={handleGrade} />
-        </Reveal>
+        <div ref={gradeFilterRef} className="mt-6 scroll-mt-6">
+          <Reveal delay={250}>
+            <GradeFilter selected={grade} onSelect={handleGrade} />
+          </Reveal>
+        </div>
 
         {/* Recommended */}
         <Reveal className="mt-12">

@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
-  const links = ["Home", "Courses", "About Us", "Contact"];
+  const links = [
+    { label: "Home", to: "/" },
+    { label: "Courses", to: "/courses" },
+    { label: "About Us", to: "/#about" },
+    { label: "Contact", to: "/#contact" },
+  ];
   const socials = ["📷", "📘", "🐦", "▶️"];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 px-10 pt-14 pb-6">
+    <footer id="contact" className="bg-gray-900 text-gray-300 px-10 pt-14 pb-6">
       <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         <div>
           <div className="flex items-center gap-2">
@@ -23,8 +30,8 @@ function Footer() {
           <h4 className="text-white font-semibold mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             {links.map((link) => (
-              <li key={link}>
-                <a href="#" className="hover:text-white transition-colors">{link}</a>
+              <li key={link.label}>
+                <Link to={link.to} className="hover:text-white transition-colors">{link.label}</Link>
               </li>
             ))}
           </ul>

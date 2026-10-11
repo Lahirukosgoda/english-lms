@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import CourseImage from "./CourseImage.jsx";
 import CourseProgress from "./CourseProgress.jsx";
 
@@ -27,13 +28,13 @@ function FeaturedCourse({ grade, topic, title, description, lessons, minutes, pr
           <CourseProgress value={progress} large />
         </div>
 
-        <button className="mt-5 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md shadow-blue-600/25 transition-all active:scale-95">
+        <Link to="/login" className="mt-5 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md shadow-blue-600/25 transition-all active:scale-95">
           Continue Learning
           <ArrowRight
             size={14}
             className="transition-transform duration-300 group-hover:translate-x-1"
           />
-        </button>
+        </Link>
       </div>
     </div>
   );

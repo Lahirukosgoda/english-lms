@@ -1,4 +1,5 @@
 import { BookOpen, Timer, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import CourseImage from "./CourseImage.jsx";
 import CourseProgress from "./CourseProgress.jsx";
 
@@ -31,13 +32,13 @@ function CourseCard({ grade, topic, title, description, lessons, minutes, progre
         <div className="mt-auto pt-5">
           <CourseProgress value={progress} />
 
-          <button className="mt-3 w-full h-10 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-all active:scale-95">
+          <Link to="/login" className="mt-3 w-full h-10 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl transition-all active:scale-95">
             {progress > 0 ? "Continue Learning" : "Start Learning"}
             <ArrowRight
               size={14}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </button>
+          </Link>
         </div>
       </div>
     </article>

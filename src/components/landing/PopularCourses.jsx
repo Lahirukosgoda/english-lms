@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function PopularCourses() {
   const courses = [
     { image: "/assets/course-phonics.jpg", badge: "Grades 1-3", title: "Phonics & Easy Vocabulary", description: "Perfect start for young learners. Learn vowel sounds, sentence basics, and essential words." },
@@ -23,9 +25,9 @@ function PopularCourses() {
               </span>
               <h3 className="font-semibold text-gray-900 mt-3">{c.title}</h3>
               <p className="text-sm text-gray-500 mt-1">{c.description}</p>
-              <a href="#" className="inline-flex items-center gap-1 text-sm text-blue-600 font-medium mt-3 hover:underline">
+              <Link to="/courses" className="inline-flex items-center gap-1 text-sm text-blue-600 font-medium mt-3 hover:underline">
                 Explore Course <span>›</span>
-              </a>
+              </Link>
             </div>
           </div>
         ))}
